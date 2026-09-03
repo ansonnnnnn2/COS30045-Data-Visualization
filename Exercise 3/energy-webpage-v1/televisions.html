@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Televisions - Data Insights</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/PowerIcon.png" alt="Power Logo" height="38">
+        <span>Appliance Energy</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="televisions.html" class="nav-link active">Televisions</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Data Story: The Real Cost of Screen Real Estate</h1>
+      <p><strong>Audience Context:</strong> Everyday consumers balancing home entertainment upgrades against ongoing residential electricity expenses.</p>
+      <p>Modern consumers gravitate toward 65-inch and 75-inch form factors. However, backlight area scales quadratically with diagonal dimensions, turning the display into one of the largest continuous power consumers in the living room.</p>
+    </section>
+
+    <section class="card">
+      <h2>Visualising Screen Size vs. Energy Consumption</h2>
+      <p>The scatter plot below models the registered market dataset after converting diagonal measurements from centimetres to rounded inches on the horizontal axis against annual energy consumption (kWh/year) on the vertical axis.</p>
+
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="assets/images/tv-energy-chart.png" alt="Scatter Plot of TV Screen Size in Inches vs Energy Consumption" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px;">
+      </div>
+
+      <h3>Key Findings & Analysis</h3>
+      <ul style="margin: 1rem 0 1.5rem 1.5rem; line-height: 1.8;">
+        <li><strong>Unit Normalisation:</strong> Converting raw centimetre values to standard diagonal inches (dividing by 2.54 and rounding) groups the models into distinct retail size brackets (43", 50", 55", 65", 75", 85").</li>
+        <li><strong>Non-Linear Escalation:</strong> Below 40 inches, power draw stays modest and tightly clustered under 300 kWh/year. Beyond 60 inches, baseline power requirements accelerate sharply due to increased illuminated surface area.</li>
+        <li><strong>Within-Class Variance:</strong> Looking at the 65-inch and 75-inch clusters, vertical columns span from roughly 250 kWh/year to over 1,200 kWh/year, demonstrating that panel backlighting and efficiency tier have as much impact on power consumption as screen dimensions.</li>
+        <li><strong>Consumer Takeaway:</strong> Buyers who want a larger display format can offset operational costs by selecting an efficient model at the lower boundary of that inch tier.</li>
+      </ul>
+    </section>
+
+    <!-- Interactive Energy Cost Calculator (Direct RM) -->
+    <section class="card">
+      <h2>Interactive TV Energy Cost Calculator</h2>
+      <p>Estimate running costs based on display power, daily usage, and electricity tariffs in Malaysian Ringgit (RM).</p>
+
+      <form id="energy-calculator" novalidate class="calc-form">
+        <div class="form-group">
+          <label for="power-watts">Television Power (Watts):</label>
+          <input type="number" id="power-watts" min="1" max="1000" placeholder="e.g. 120" required>
+          <small id="error-watts" class="error-msg">Please enter a positive power rating in Watts.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="daily-hours">Daily Usage (Hours):</label>
+          <input type="number" id="daily-hours" min="0.1" max="24" step="0.5" placeholder="e.g. 4" required>
+          <small id="error-hours" class="error-msg">Please enter hours between 0.1 and 24.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="energy-tariff">Electricity Tariff (RM per kWh):</label>
+          <input type="number" id="energy-tariff" min="0.01" max="10.00" step="0.01" value="0.51" required>
+          <small id="error-tariff" class="error-msg">Please enter a valid rate in RM (e.g. 0.51).</small>
+        </div>
+
+        <button type="submit" class="calc-btn">Calculate Running Costs</button>
+      </form>
+
+      <div id="calculator-results" class="calc-results" style="display: none;">
+        <h3>Estimated Consumption & Cost</h3>
+        <ul>
+          <li>Daily Consumption: <strong id="out-daily-kwh">0.00</strong> kWh</li>
+          <li>Annual Consumption: <strong id="out-annual-kwh">0.00</strong> kWh/year</li>
+          <li>Estimated Monthly Cost: <strong id="out-monthly-cost">RM 0.00</strong></li>
+          <li>Estimated Annual Cost: <strong id="out-annual-cost">RM 0.00</strong>/year</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tan Jean Shern. All rights reserved.</p>
+    <p><small>Generative AI Declaration: Assisted by Google Gemini for semantic HTML markup, JavaScript calculation logic, and contextual story drafting.</small></p>
+  </footer>
+
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
