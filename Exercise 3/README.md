@@ -1,8 +1,8 @@
 # Exercise 3: Communicating Data Insights
 
 **Unit:** COS30045 Data Visualisation  
-**Student Name:** Tan Jin Shern  
-**Institution:** Swinburne University of Technology  
+**Student Name:** Tan Jean Shern  
+**Institution:** Inti Subang  
 
 ---
 
