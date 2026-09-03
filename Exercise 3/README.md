@@ -1,104 +1,56 @@
-# Exercise 3 – Data Story: TV Energy Consumption
+# Exercise 3: Communicating Data Insights
 
-## Overview
-
-In this exercise, you will develop a **data story** based on the **TV Energy Consumption dataset**. Using the website created in **Exercise 0.2**, you will extend your work to present a meaningful narrative supported by data visualisations.
-
-Your goal is to communicate insights from the dataset in a clear and engaging way through your **website and written explanation**.
-
-You must use the **Exercise 3 folder in your existing forked repository** and reuse the files created in **Exercise 0.2**.
+**Unit:** COS30045 Data Visualisation  
+**Student Name:** Tan Jin Shern  
+**Institution:** Swinburne University of Technology  
 
 ---
 
-## Data Story
+## 1. Data Story
 
 ### Audience
+The primary audience for this data story consists of everyday Australian household consumers, apartment renters, and home entertainment enthusiasts looking to balance visual performance upgrades against recurring electricity bills. 
 
-The target audience for this visualisation includes:
+### Audience Interest in the Visualisation
+With domestic energy tariffs rising across residential networks, consumers frequently evaluate retail displays based strictly on shelf sticker prices without factoring in lifetime operating costs. 
 
-- Consumers interested in **energy-efficient televisions**
-- Policy makers and regulators interested in **energy consumption trends**
-- Researchers studying **energy efficiency in consumer electronics**
-
-These audiences are interested in understanding how **television energy consumption varies across models, sizes, and technologies**, and how these factors influence overall energy usage.
-
-### Story Overview
-
-This visualisation explores patterns in **TV energy consumption** across different television models and specifications.
-
-The goal is to help viewers understand:
-
-- How energy consumption varies between television models
-- The relationship between **screen size and power consumption**
-- How **energy efficiency ratings** impact energy usage
-- Trends that may help consumers choose more **energy-efficient televisions**
-
-The website presents these insights through visualisations and explanatory text that guide the viewer through the data.
+Because modern living room displays have shifted from 40-inch baselines up to 65-inch and 75-inch panels, consumers need an intuitive, evidence-based visual model to understand how physical screen area drives power usage. This visualisation allows potential buyers to:
+* Identify how power draw scales exponentially with screen real estate.
+* Recognise efficiency discrepancies between panel backlighting types within the exact same size tier.
+* Use the integrated interactive calculator to forecast customized annual and monthly running expenses in local currency before committing to a purchase.
 
 ---
 
-## About the Data
+## 2. About the Data
 
 ### Data Source
-
-The dataset used in this project contains information about **television models and their energy consumption characteristics**, including power usage, screen size, technology type, and efficiency ratings.
-
-The dataset was provided as part of the course materials.
+The dataset is acquired from the official Australian Energy Rating registration database for domestic televisions, administered under the Greenhouse and Energy Minimum Standards (GEMS) regulatory scheme. The dataset catalogs certified appliance models, diagonal physical measurements (in centimetres), screen resolution tiers, Star Ratings, and standardised comparative annual energy consumption figures (measured in kWh/year based on 10 hours of daily operation).
 
 ### Data Processing
-
-Before creating visualisations, the dataset was processed to ensure it was suitable for analysis. This included:
-
-- Cleaning missing or inconsistent values
-- Selecting relevant attributes for visualisation
-- Organising the data into formats suitable for web visualisation
+Data cleaning and feature engineering were executed using the KNIME Analytics Platform:
+1. **Filtering & Quality Control:** Removed incomplete entries, uncertified test prototypes, and duplicate registrations to isolate active commercial retail consumer models.
+2. **Dimension Conversion:** The raw dataset recorded screen diagonal dimensions in centimetres. Using a Math Formula node, values were normalised into standard consumer display inches by dividing by 2.54 and rounding to the nearest integer ($cm / 2.54$). This clustered models cleanly into standard retail categories (e.g., 43", 50", 55", 65", 75", 85").
+3. **Outlier Verification:** Screen size to energy consumption ranges were audited to ensure extreme high-wattage industrial displays did not distort consumer-level metrics.
 
 ### Privacy
-
-The dataset does not contain any **personal or sensitive information**. It focuses solely on product specifications and energy consumption data related to television devices.
+The underlying records consist strictly of public regulatory compliance test declarations and manufacturer product specifications. The dataset contains zero Personally Identifiable Information (PII), individual consumer usage logs, household telemetry, or commercial transactional data. Handling and presenting this dataset introduces no individual privacy risks.
 
 ### Accuracy and Limitations
-
-While the dataset provides useful information about TV energy consumption, there are some limitations:
-
-- The dataset may not include **all available television models**
-- Some information may be **outdated or incomplete**
-- Energy consumption may vary depending on **real-world usage conditions**
-
-These factors should be considered when interpreting the visualisations.
+* **Standardised Duty Cycle:** Annual consumption (kWh/year) figures are calculated using a standardised laboratory duty cycle (10 hours on / 14 hours standby). Actual household consumption will vary depending on user habits, HDR usage, local backlighting dimming zones, and ambient sensor settings.
+* **Rapid Technological Turnaround:** Retail TV ranges update frequently; newly introduced Micro-LED or modern high-efficiency OLEDs may exhibit superior efficiency profiles not captured in earlier regulatory registration cycles.
+* **Measurement Approximation:** Converting continuous diagonal centimetre measurements into rounded integer inches creates discrete column clusters, grouping together slight physical variations within common panel brackets.
 
 ### Ethics
-
-When presenting data visualisations, it is important to ensure that the information is represented **accurately and responsibly**.
-
-This project follows ethical data visualisation practices by:
-
-- Avoiding misleading visual representations
-- Clearly explaining the context of the data
-- Presenting information transparently so viewers can interpret the results correctly
+* **Zero Baseline & Honest Framing:** Scatter plots maintain standard continuous scaling to prevent artificial visual distortion of comparative power draw between size groups.
+* **Vendor-Neutral Reporting:** No single manufacturer or display brand is unfairly penalized or highlighted; the data emphasizes underlying panel physics and energy tiers to empower honest consumer decision-making.
+* **Transparent Guidance:** Visual takeaways clearly distinguish between size-driven increases and efficiency differences to ensure consumers are not misled into believing all large displays are equally costly to operate.
 
 ---
 
-## AI Declaration
+## 3. AI Declaration
 
-Artificial Intelligence (AI) tools may have been used to assist with aspects of this assignment, such as:
-
-- Generating example code
-- Improving code structure
-- Assisting with documentation writing
-
-All AI-generated assistance was reviewed, modified where necessary, and integrated responsibly into the project.
-
----
-
-## Website Storytelling
-
-The website has been updated to communicate a **data-driven story** based on the TV energy consumption dataset.
-
-The website includes:
-
-- Visualisations that present key insights from the dataset
-- Text explanations that help readers understand the meaning of the visualisations
-- Context that connects the data to real-world implications
-
-The aim is to guide the viewer through the data in a way that is **informative, engaging, and easy to understand**.
+**Generative AI Tool:** Google Gemini  
+**Assistance Provided:**
+* Structuring semantic HTML5 markup and responsive CSS styling for cross-device compatibility.
+* Designing and implementing vanilla JavaScript DOM manipulation routines for the interactive FAQ accordion and input-validated appliance energy calculator.
+* Reviewing and refining narrative copy to communicate data visualization principles clearly to general consumer audiences.
