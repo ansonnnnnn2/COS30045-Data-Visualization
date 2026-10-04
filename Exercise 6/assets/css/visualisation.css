@@ -1,0 +1,22 @@
+.responsive-svg-container {
+  width: 100%;
+}
+
+.responsive-svg-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.axis-label {
+  font-size: 12px;
+  font-weight: bold;
+  fill: #444;
+}
+
+.x-axis path,
+.y-axis path,
+.x-axis line,
+.y-axis line {
+  stroke: #888;
+}

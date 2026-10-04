@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5 - Multi-Chart Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/images/PowerIcon.png" alt="Appliance Energy Logo" class="logo-img" width="32" height="32" style="vertical-align: middle;">
+        <span class="site-title">Appliance Energy</span>
+      </div>
+      <ul class="nav-menu">
+
+        <li><a href="index.html" class="nav-link active">Exercise 5</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" style="max-width: 1000px; margin: 40px auto; padding: 0 1rem;">
+    
+    <section class="card" style="margin-bottom: 2.5rem;">
+      <h2 style="color: #0d6e58; margin-top: 0;">Exercise 5.1: Vertical Bar Chart with Axis</h2>
+      <p style="color: #555; margin-bottom: 1.5rem;">
+        Average energy consumption across screen types for <strong>55-inch TVs only</strong>.
+      </p>
+      <div id="bar-chart" class="responsive-svg-container"></div>
+    </section>
+
+    <section class="card" style="margin-bottom: 2.5rem;">
+      <h2 style="color: #0d6e58; margin-top: 0;">Exercise 5.2: Scatter Plot and Line Chart</h2>
+      <p style="color: #555; margin-bottom: 1.5rem;">
+        Average electricity spot price per MWh in Australia (1998 - 2024).
+      </p>
+      <div id="line-chart" class="responsive-svg-container"></div>
+    </section>
+
+    <section class="card">
+      <h2 style="color: #0d6e58; margin-top: 0;">Exercise 5.3: Donut Chart</h2>
+      <p style="color: #555; margin-bottom: 1.5rem;">
+        Proportion of small, medium, and large TV screen sizes.
+      </p>
+      <div id="donut-chart" class="responsive-svg-container"></div>
+    </section>
+
+  </main>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <script src="assets/js/bar-chart.js"></script>
+  <script src="assets/js/line-chart.js"></script>
+  <script src="assets/js/donut-chart.js"></script>
+</body>
+</html>

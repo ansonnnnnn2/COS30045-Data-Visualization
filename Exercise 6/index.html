@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6 - Interactive Visualisations</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/visualisation.css">
+</head>
+<body>
+
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/images/PowerIcon.png" alt="Appliance Energy Logo" class="logo-img" width="32" height="32" style="vertical-align: middle;">
+        <span class="site-title">Appliance Energy</span>
+      </div>
+      <ul class="nav-menu">
+ 
+        <li><a href="index.html" class="nav-link active">Exercise 6</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" style="max-width: 1000px; margin: 40px auto; padding: 0 1rem;">
+    
+
+    <section class="card" style="margin-bottom: 2.5rem;">
+      <h2 style="color: #0d6e58; margin-top: 0;">Exercise 6.1 & 6.2: Energy Consumption Histogram</h2>
+      <p style="color: #555;">
+        Filter by TV screen technology to inspect energy consumption distribution:
+      </p>
+
+
+      <div id="filters_screen" style="margin-bottom: 1rem;"></div>
+
+
+      <div id="histogram" class="responsive-svg-container"></div>
+    </section>
+
+    <section class="card">
+      <h2 style="color: #0d6e58; margin-top: 0;">Exercise 6.3 & 6.4: Star Rating vs Energy Consumption</h2>
+      <p style="color: #555; margin-bottom: 1.5rem;">
+        Hover over data points to inspect TV screen size details via tooltips:
+      </p>
+
+      <!-- Scatterplot SVG Container (Ex 6.3) -->
+      <div id="scatterplot" class="responsive-svg-container"></div>
+    </section>
+
+  </main>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="assets/js/shared-constants.js"></script>
+  <script src="assets/js/interactions.js"></script>
+  <script src="assets/js/histogram.js"></script>
+  <script src="assets/js/scatterplot.js"></script>
+  <script src="assets/js/load-data.js"></script>
+</body>
+</html>

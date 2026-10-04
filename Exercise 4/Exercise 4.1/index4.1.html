@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4.1</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/PowerIcon.png" alt="Power Logo" height="38">
+        <span>Appliance Energy</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index4.1.html" class="nav-link active">Exercise 4.1</a></li>
+        <!-- Notice the new file name (index4.3.html) -->
+        <li><a href="../Exercise 4.3/index4.3.html" class="nav-link">Exercise 4.3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Exercise 4.1: SVG House and Garden</h1>
+      <h2>Step 1: Create a picture with SVG shapes</h2>
+      <p>This drawing uses SVG primitives, paths, and groups to demonstrate coordinate mapping in the browser.</p>
+      
+      <div style="text-align: center; margin: 2rem 0;">
+        <!-- SVG Canvas -->
+        <svg width="500" height="400" style="border: 1px solid var(--border-color); background-color: #87CEEB; border-radius: 8px;">
+          
+          <circle cx="420" cy="80" r="40" fill="#FFD700" />
+          
+          <g fill="#FFFFFF">
+            <ellipse cx="100" cy="80" rx="30" ry="20" />
+            <ellipse cx="130" cy="70" rx="35" ry="25" />
+            <ellipse cx="160" cy="80" rx="30" ry="20" />
+          </g>
+
+          <rect x="0" y="250" width="500" height="150" fill="#228B22" />
+          
+          <path d="M 250 400 Q 180 320 250 250" fill="none" stroke="#DEB887" stroke-width="45" />
+
+          <rect x="150" y="130" width="200" height="150" fill="#CD853F" />
+          
+          <path d="M 130 130 L 250 40 L 370 130 Z" fill="#8B0000" />
+          
+          <rect x="230" y="200" width="40" height="80" fill="#8B4513" />
+          <circle cx="262" cy="245" r="4" fill="#FFD700" />
+
+          <g fill="#87CEFA" stroke="#333" stroke-width="3">
+            <rect x="170" y="160" width="40" height="40" />
+            <rect width="40" height="40" transform="translate(290, 160)" />
+          </g>
+          
+          <text x="20" y="375" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF" font-weight="bold" letter-spacing="1">My SVG Garden</text>
+          
+        </svg> 
+      </div>
+
+      <div style="margin-top: 3rem; text-align: left;">
+        <h2>Step 2: Coordinate System Annotation</h2>
+        <p>The screenshot below demonstrates how SVG coordinates map to the browser, with the origin (0, 0) located at the top-left of the SVG container.</p>
+        
+        <div style="text-align: center; margin-top: 1rem;">
+          <img src="assets/images/annotated-house.png" alt="Annotated SVG showing coordinate mapping" style="max-width: 100%; border: 1px solid var(--border-color); border-radius: 8px;">
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; text-align: left;">
+        <h3>Coordinate Reference Table</h3>
+        <p>A breakdown of how different SVG shapes position themselves relative to the (0,0) origin.</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+          <thead>
+            <tr style="background-color: var(--primary-color, #f4f4f4); border-bottom: 2px solid var(--border-color, #ccc);">
+              <th style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Element</th>
+              <th style="padding: 12px; border: 1px solid var(--border-color, #ddd);">SVG Shape</th>
+              <th style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Coordinate Type</th>
+              <th style="padding: 12px; border: 1px solid var(--border-color, #ddd);">X Coordinate</th>
+              <th style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Y Coordinate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Canvas Origin</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);"><em>Viewport</em></td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Top-Left Corner</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">0</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">0</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">House Base</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);"><code>&lt;rect&gt;</code></td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Top-Left Corner (x, y)</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">150</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">130</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Roof Peak</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);"><code>&lt;path&gt;</code></td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Start/Move Point (M)</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">250</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">40</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Sun</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);"><code>&lt;circle&gt;</code></td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Center Point (cx, cy)</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">420</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">80</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Title Text</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);"><code>&lt;text&gt;</code></td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">Baseline Start (x, y)</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">20</td>
+              <td style="padding: 12px; border: 1px solid var(--border-color, #ddd);">375</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tan Jean Shern. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
